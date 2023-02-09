@@ -35,7 +35,7 @@ public class Caddie extends HttpServlet {
 		session.setAttribute("ListeArticles", ListeArticles);
 		session.setAttribute("message", "");
 		
-		System.out.println("dnas le caddie");
+		System.out.println("dans le caddie");
 		
 		request.getRequestDispatcher( "WEB-INF/caddie.jsp" ).forward( request, response );
 	}
@@ -46,7 +46,7 @@ public class Caddie extends HttpServlet {
 		HttpSession session = request.getSession( true );
 		User Utilisateur = (User) session.getAttribute("Utilisateur");
 		
-		 session.setAttribute("message", "");
+		session.setAttribute("message", "");
 		
 		ListeArticles ListeArticles = (ListeArticles) session.getAttribute( "ListeArticles" );
 		ListeArticles.setFullPrice(""+Utilisateur.getId());
@@ -56,17 +56,16 @@ public class Caddie extends HttpServlet {
 		if ( request.getParameter( "btnDisconect") != null ){
 			session.invalidate();
 			request.getRequestDispatcher( "WEB-INF/login.jsp" ).forward( request, response );
-		}
-		
+		}		
 		
 		boolean bool = true;
 		for (Charriot s : ListeArticles.getCharriot()) {
 			if (!ArticleDAO.hasEnought(""+s.getArticle().getId(),""+s.getQuantity())) {
-				session.setAttribute("message", "Nous sommes d�sol� l'article "+s.getArticle().getNom()+" n'est plus disponible dans les quantit�s souhait�s.");
+				session.setAttribute("message", "Nous sommes desole l'article "+s.getArticle().getNom()+" n'est plus disponible dans les quantités souhaités.");
 				bool = false;
 				request.getRequestDispatcher( "WEB-INF/caddie.jsp" ).forward( request, response );
 			}
-			
+		
 		}	
 		
 		if (bool) {
@@ -79,9 +78,10 @@ public class Caddie extends HttpServlet {
 			}
 			
 			//envoyer un mail
+			/*
 			Mail mail = new Mail();
 			mail.sendMail(Utilisateur, ListeArticles);
-			
+			*/
 			
 			//avant de reset 
 			ListeArticles.resetcharriot();
@@ -90,7 +90,7 @@ public class Caddie extends HttpServlet {
 			request.getRequestDispatcher( "WEB-INF/caddie.jsp" ).forward( request, response );
 		}
 
-
+		
 		request.getRequestDispatcher( "WEB-INF/caddie.jsp" ).forward( request, response );
 		
 	}

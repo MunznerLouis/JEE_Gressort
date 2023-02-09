@@ -1,6 +1,5 @@
 package com.general.objet;
 
-
 public class User {
 
 	private int id;
@@ -19,7 +18,7 @@ public class User {
 		this.setRole(role);
 	}
 	
-	
+	//GETTER SETTER
 	public int getId() {
 		return id;
 	}
@@ -67,12 +66,6 @@ public class User {
 	public void setRole(int role) {
 		this.role = role;
 	}
-
-	
-	
-	
-	
-
 
 
 	

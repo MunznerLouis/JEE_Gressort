@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <%@ include file="header.jsp" %>
     <head>
         <meta charset="UTF-8">
@@ -50,7 +50,8 @@
 	        
 	            <label class="col-sm col-form-label">Nouveau role :</label>
 	        <div class="col-sm-10">
-                <input name="id" class="form-control" value="" autofocus />
+                <input name="newRole" class="form-control" value="" autofocus />
+                <div class="errorMessage" style="color: red;font-size: 12px;margin-top: 5px;">${errorMessage}</div>
             </div>
         
             <br/><br/><br/>
@@ -64,8 +65,8 @@
         <li class="list-group-item list-group-item-secondary py-2">Role 2 : Super Utilisateur (réduction de 25%)</li>
         <li class="list-group-item list-group-item-secondary py-2">Role 3 : Utilisateur (pas de réduction)</li>
     </ul>
-    
+ </div></div>  
 </body>
-</div></div>
+
 <%@ include file="footer.jsp" %>
 </html>

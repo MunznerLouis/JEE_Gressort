@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -45,5 +45,42 @@
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-util-scan.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-websocket.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/websocket-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/cdi-api-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/classmate-1.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/el-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-commons-annotations-4.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-core-4.2.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-core-5.2.4.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jandex-2.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jboss-transaction-api_1.3_spec-2.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/jsr250-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/log4j-api-2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/log4j-core-2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/mariadb-java-client-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/mariadb-java-client-3.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/ojdbc7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/slf4j-api-1.7.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/slf4j-jdk14-1.7.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/taglibs-standard-compat-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/taglibs-standard-jstlel-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/munzn/Desktop/bordel/general_ressort_MunznerLouis_BriseQuentin/lib/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

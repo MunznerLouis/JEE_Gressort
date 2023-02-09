@@ -1,6 +1,5 @@
 package com.general.dao;
 
-import javax.servlet.ServletContext;
 
 public class DAOContext {
 	

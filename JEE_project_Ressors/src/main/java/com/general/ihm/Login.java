@@ -1,10 +1,9 @@
 package com.general.ihm;
 
 import java.io.IOException;
-
-
-
-
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import com.general.dao.*;
 import com.general.objet.Achats;
@@ -36,7 +35,6 @@ public class Login extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("salut");
 		HttpSession session = request.getSession( true );
 		if ( session.getAttribute( "Utilisateur" ) != null ) {
 			response.sendRedirect( "touslesarticles" );
@@ -58,22 +56,37 @@ public class Login extends HttpServlet {
 		request.setAttribute( "login", login );
 		request.setAttribute( "password", password );
 		
-		User Utilisateur = UserDAO.isLoginValid( login, password );
-		if ( Utilisateur != null ) {
-			HttpSession session = request.getSession( true );
-			session.setAttribute( "Utilisateur", Utilisateur );
-			session.setAttribute( "ListeArticles", new ListeArticles() );
-			session.setAttribute( "achats", new Achats(Utilisateur) );
-			request.setAttribute( "listArticle", ArticleDAO.getallArticle() );
-			response.sendRedirect( "touslesarticles" );
-			return;
-		} else {
+		User Utilisateur = UserDAO.isLoginValid( login, hashPassword(password) );
+		if ( Utilisateur == null ) {
 			request.setAttribute( "message", "Mauvais mail ou mot de passe" );			
 			request.getRequestDispatcher( "WEB-INF/login.jsp" ).forward( request, response );
 			return;
-			
 		}
+		HttpSession session = request.getSession( true );
+		session.setAttribute( "Utilisateur", Utilisateur );
+		session.setAttribute( "ListeArticles", new ListeArticles());
+		session.setAttribute( "achats", new Achats(Utilisateur) );
+		request.setAttribute( "listArticle", ArticleDAO.getallArticle() );
+		response.sendRedirect( "touslesarticles" );
+		return;
 		
 	}
+	
+	private static String hashPassword(String password) {
+	    String hashedPassword = null;
+	    try {
+	        MessageDigest md = MessageDigest.getInstance("SHA-256");
+	        byte[] hashInBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
+	        StringBuilder sb = new StringBuilder();
+	        for (byte b : hashInBytes) {
+	            sb.append(String.format("%02x", b));
+	        }
+	        hashedPassword = sb.toString();
+	    } catch (NoSuchAlgorithmException e) {
+	        System.err.println("Error while hashing the password: " + e.getMessage());
+	    }
+	    return hashedPassword;
+	}
 }
+

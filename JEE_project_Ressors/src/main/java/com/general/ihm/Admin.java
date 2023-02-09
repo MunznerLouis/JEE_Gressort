@@ -39,7 +39,7 @@ public class Admin extends HttpServlet {
 			request.getRequestDispatcher( "WEB-INF/touslesarticles.jsp" ).forward( request, response );
 			
 		} else {
-			
+			request.setAttribute( "errorMessage", "" );
 			request.setAttribute( "listUser", UserDAO.getAllUser() );
 			//request.setAttribute( "idAchats", "Afficher tous les achats de l'utilisateur" );
 			request.getRequestDispatcher( "WEB-INF/admin.jsp" ).forward( request, response );
@@ -59,33 +59,31 @@ public class Admin extends HttpServlet {
 		
 		User utilisateur = (User) session.getAttribute("Utilisateur");
 		
-		if ( UserDAO.isAdmin( utilisateur.getMail() )) {
-			request.setAttribute( "listUser", UserDAO.getAllUser() );
-			String id = request.getParameter( "id" );
-			try {
-				String newRole = request.getParameter( "newRole" );
-				UserDAO.changeRole( id, newRole );
-			} catch (Exception e) {
-				
-			}
+		//trying to sneak in through url
+	    if ( !UserDAO.isAdmin( utilisateur.getMail() )) {
+	    	request.getRequestDispatcher( "WEB-INF/touslesarticles.jsp" ).forward( request, response );
+	    	return;
+	    }
+	   	
+        request.setAttribute( "listUser", UserDAO.getAllUser() );
+        String id = request.getParameter( "id" );
+        String newRole = request.getParameter("newRole");
 		
-			if ( request.getParameter( "buttonsbmit" ) != null ) {
-				System.out.println(request.getParameter("txt"));
-				session.setAttribute( "achatsAdmin", new Achats(UserDAO.createUser(request.getParameter("txt"))) );
-				//request.setAttribute( "idAchats", "Afficher tous les achats de l'utilisateur" );
-			}
-			
-		
-			
-			request.getRequestDispatcher( "WEB-INF/admin.jsp" ).forward( request, response );
+		if (id != null && !id.isEmpty() && newRole != null && !newRole.isEmpty()) {
+			UserDAO.changeRole( id, newRole );
 		} else {
-			request.getRequestDispatcher( "WEB-INF/touslesarticles.jsp" ).forward( request, response );
+			request.setAttribute("errorMessage", "Les deux champs sont requis");
+			request.getRequestDispatcher( "WEB-INF/admin.jsp" ).forward( request, response );
+			return;
 		}
-
 		
-		
-			
-		
+		if ( request.getParameter( "buttonsbmit" ) != null ) {
+            System.out.println(request.getParameter("txt"));
+            session.setAttribute( "achatsAdmin", new Achats(UserDAO.createUser(request.getParameter("txt"))) );
+            //request.setAttribute( "idAchats", "Afficher tous les achats de l'utilisateur" );
+        }
+        
+        request.getRequestDispatcher( "WEB-INF/admin.jsp" ).forward( request, response );
 	}
 	
 }

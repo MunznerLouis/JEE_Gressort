@@ -4,7 +4,6 @@ import java.io.IOException;
 
 
 import com.general.dao.ArticleDAO;
-import com.general.dao.UserDAO;
 import com.general.objet.ListeArticles;
 
 import javax.servlet.ServletException;
@@ -43,9 +42,11 @@ public class Touslesarticles extends HttpServlet {
 		ListeArticles ListeArticles = (ListeArticles) session.getAttribute( "ListeArticles" );
 		request.setAttribute( "listArticle", ArticleDAO.getallArticle() );
 		System.out.println("ver1");
+		
+		//partie qui gère la déconnexion
 		if ( request.getParameter( "btnDisconect") != null ){
 			session.invalidate();
-			request.getRequestDispatcher( "WEB-INF/login.jsp" ).forward( request, response );
+			response.sendRedirect( "login" );
 			return;
 		} 
 		if ( request.getParameter( "btnAdd" ) != null ) {

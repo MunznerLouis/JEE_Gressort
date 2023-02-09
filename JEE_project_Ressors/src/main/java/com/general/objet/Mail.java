@@ -33,7 +33,7 @@ public class Mail {
 									});
 	
 		try {
-			// Etape 2 : Cr�ation de l'objet Message
+			// Etape 2 : Création de l'objet Message //BLOCKS HERE
 			Message message = new MimeMessage(session);
 			
 			message.setFrom(new InternetAddress(mail));
@@ -62,7 +62,7 @@ public class Mail {
 			msg+= "Avec reduction, Total = "+listeArticles.getFullPrice()+"\n";
 			
 				
-			msg+="En esperant vous revoir bient�t! l'equipe general ressort.";
+			msg+="En esperant vous revoir bientôt! l'equipe general ressort.";
 			
 			
 			//MESSAGE.
